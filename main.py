@@ -17,6 +17,10 @@ MESSAGE = (
     "enjoy the weekend!"
 )
 
+# Guard: the sealed gate accepts 1-159 characters; fail loudly if
+# the line is ever edited past it.
+assert 1 <= len(MESSAGE) <= 159, "entry must be 1-159 characters"
+
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
